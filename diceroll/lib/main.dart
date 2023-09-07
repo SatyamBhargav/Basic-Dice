@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,25 +10,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('First App'),
+        body: GradientContainer(),
+      ),
+    );
+  }
+}
+
+class GradientContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.deepPurple,
+            Color.fromARGB(255, 152, 182, 45),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                'Hello World!',
-              ),
-              Text(
-                'It\'s time to learn Flutter!',
-              ),
-            ],
+      ),
+      child: Center(
+        child: Text(
+          'Hello World!',
+          style: TextStyle(
+            fontSize: 28,
+            color: Colors.white,
           ),
         ),
       ),
