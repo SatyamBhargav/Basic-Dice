@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'gradientcontainer.dart';
+import 'gradient_container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: GradientContainer(),
+        body: GradientContainer(
+          colors: [
+            Colors.deepPurple,
+            Color.fromARGB(255, 152, 182, 45),
+          ],
+        ),
       ),
     );
   }
